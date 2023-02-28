@@ -1,0 +1,272 @@
+
+import java.awt.print.PrinterException;
+
+    public class Restaurant extends javax.swing.JFrame {
+    public Restaurant() {
+        initComponents();
+    }
+
+    
+                           
+    private void initComponents() {
+
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        jLabel2 = new javax.swing.JLabel();
+        tCustomer = new javax.swing.JLabel();
+        tName = new javax.swing.JLabel();
+        tContact = new javax.swing.JLabel();
+        tFood = new javax.swing.JLabel();
+        tDrink = new javax.swing.JLabel();
+        tType = new javax.swing.JLabel();
+        txtCustomer = new javax.swing.JTextField();
+        txtName = new javax.swing.JTextField();
+        txtContact = new javax.swing.JTextField();
+        b1 = new javax.swing.JRadioButton();
+        b2 = new javax.swing.JRadioButton();
+        tReset = new javax.swing.JButton();
+        tPrint = new javax.swing.JButton();
+        tReceipt = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtField = new javax.swing.JTextArea();
+        c1 = new javax.swing.JComboBox<>();
+        c2 = new javax.swing.JComboBox<>();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setFont(new java.awt.Font("Agency FB", 1, 14)); // NOI18N
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resaturantmanagement/21ba8c2611702de80ca8faea79557692.jpg"))); // NOI18N
+
+        tCustomer.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        tCustomer.setForeground(new java.awt.Color(255, 0, 0));
+        tCustomer.setText("Customer No. :");
+
+        tName.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        tName.setForeground(new java.awt.Color(255, 51, 0));
+        tName.setText("Name :");
+
+        tContact.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        tContact.setForeground(new java.awt.Color(255, 0, 0));
+        tContact.setText("Contact :");
+
+        tFood.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        tFood.setForeground(new java.awt.Color(255, 0, 0));
+        tFood.setText(" Food :");
+
+        tDrink.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        tDrink.setForeground(new java.awt.Color(255, 0, 0));
+        tDrink.setText("Drinks :");
+
+        tType.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        tType.setForeground(new java.awt.Color(255, 51, 0));
+        tType.setText("Type :");
+
+        buttonGroup1.add(b1);
+        b1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        b1.setText("Diet");
+
+        buttonGroup1.add(b2);
+        b2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        b2.setText("Normal");
+
+        tReset.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        tReset.setText("Reset");
+        tReset.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tResetActionPerformed(evt);
+            }
+        });
+
+        tPrint.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        tPrint.setText("Print");
+        tPrint.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tPrintActionPerformed(evt);
+            }
+        });
+
+        tReceipt.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        tReceipt.setText("Receipt");
+        tReceipt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tReceiptActionPerformed(evt);
+            }
+        });
+
+        txtField.setColumns(20);
+        txtField.setRows(5);
+        jScrollPane1.setViewportView(txtField);
+
+        c1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        c1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cheese Pizza", "Salad", "Veg Thali", "Non-Veg Thali" }));
+
+        c2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        c2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Water", "Butter Milk", "Lemon Juice", "Tea", "Coffee" }));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(tCustomer)
+                    .addComponent(tName, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tContact, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tFood, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tDrink, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tType, javax.swing.GroupLayout.Alignment.LEADING))
+                .addGap(63, 63, 63)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(txtCustomer)
+                        .addComponent(txtName)
+                        .addComponent(txtContact)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(b1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
+                            .addComponent(b2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(c1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(c2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(51, 51, 51)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(tReset, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43)
+                        .addComponent(tPrint, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(tReceipt))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jLabel2)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(53, 53, 53)
+                                        .addComponent(tCustomer)
+                                        .addGap(42, 42, 42)
+                                        .addComponent(tName))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(54, 54, 54)
+                                        .addComponent(txtCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(38, 38, 38)
+                                .addComponent(tContact))
+                            .addComponent(txtContact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(40, 40, 40)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tFood)
+                            .addComponent(c1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(36, 36, 36)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tDrink)
+                            .addComponent(c2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(37, 37, 37)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tType)
+                            .addComponent(b1)
+                            .addComponent(b2)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(2, 2, 2)
+                                .addComponent(tReceipt, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(tPrint, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tReset, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(62, 62, 62)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        pack();
+    }// </editor-fold>                        
+
+    private void tResetActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        // TODO add your handling code here:
+        txtName.setText("");
+        txtCustomer.setText("");
+        txtContact.setText("");
+    }                                      
+
+    private void tPrintActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        // TODO add your handling code here:
+         try{
+        txtField.print();
+        }
+        catch(PrinterException ex){
+        System.out.println(ex.getMessage());
+        }
+    }                                      
+
+    private void tReceiptActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+        txtField.setText("CustomerNo. :" + " " + txtCustomer.getText() + "\n Customer Name :" + " " + txtName.getText() + "\n Customer ContactNo. :" + " " + txtContact.getText());
+        txtField.setText(txtField.getText() + "\n Foods :"+ "  " +  c1.getSelectedItem());
+        txtField.setText(txtField.getText() + "\n Drinks :"+ "  " +  c2.getSelectedItem());
+    }                                        
+
+    
+    public static void main(String args[]) {
+       
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Restaurant.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Restaurant.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Restaurant.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Restaurant.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+       
+
+      
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Restaurant().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration                    
+    private javax.swing.JRadioButton b1;
+    private javax.swing.JRadioButton b2;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JComboBox<String> c1;
+    private javax.swing.JComboBox<String> c2;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel tContact;
+    private javax.swing.JLabel tCustomer;
+    private javax.swing.JLabel tDrink;
+    private javax.swing.JLabel tFood;
+    private javax.swing.JLabel tName;
+    private javax.swing.JButton tPrint;
+    private javax.swing.JButton tReceipt;
+    private javax.swing.JButton tReset;
+    private javax.swing.JLabel tType;
+    private javax.swing.JTextField txtContact;
+    private javax.swing.JTextField txtCustomer;
+    private javax.swing.JTextArea txtField;
+    private javax.swing.JTextField txtName;
+                      
+}
